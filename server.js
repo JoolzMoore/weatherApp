@@ -3,12 +3,22 @@ var fs = require('fs');
 var request = require('request');
 var cheerio = require('cheerio');
 var app     = express();
-var path = require('path')
+var path = require('path');
+var bodyParser = require ('body-parser');
+var hbs = require ('express-handlebars');
+exphbs = require ('express3-handlebars');
 
-app.get("/", function(req, res) {
+app.engine('hbs, hbs ({extname:'hbs' defaultLayout:'layout', layoutDir __dirname + '/views/layout.hbs'})')
+app.engine('handlebars', exphbs({defaultLayout:'layout'}));
+app.set('view engine', 'handlebars');
+app.set ('views', path.join(__dirname, "views"));
+.get("/", function(req, res) {
   res.send("Index Route")
 })
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:false}));
+app.use('/', public, express.static('public'));
 app.get('/scrape', function(req, res){
 
 url = 'http://www.metvuw.com/forecast/forecast1.php?type=rain&region=nz&tim=006'
@@ -22,7 +32,7 @@ request(url, function(error, response, html){
       let images = $('img').each(function(i, elem) {
         json = path.join(host, $(this).attr('src'))
       })
-
+app.use ('/', routes);
 
     //
     //     var $ = cheerio.load(html);
