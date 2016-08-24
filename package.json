@@ -1,12 +1,19 @@
 {
-  "name": "weather",
+  "name": "weatherApp",
   "version": "1.0.0",
-  "description": "",
+  "description": "WeatherScrape",
   "main": "index.js",
   "scripts": {
     "start": "node server",
+    "knex": "knex",
+    "start": "node-inspector & nodemon --debug index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+   "type": "git",
+   "url": "git+https://github.com/JoolzMoore/weatherApp"
+ },
+
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -15,6 +22,10 @@
     "express": "^4.14.0",
     "express-handlebars": "^3.0.0",
     "express3-handlebars": "^0.5.2",
-    "request": "^2.74.0"
+    "knex": "^0.11.10",
+    "node-inspector": "^0.12.8",
+    "nodemon": "^1.10.2",
+    "request": "^2.74.0",
+    "sqlite3": "^3.1.4"
   }
 }

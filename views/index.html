@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title> Forecast maps</title>
+    <script src="weatherList.json"</script>
+      <script> id="mapTemplate" type="text/x-handlebars-template">
+        {{#each mapImage}}
+        <li>{{src}}</li>
+        {{/each}}
+      </script>
+  </head>
+
+<body>
+  <div id="map">
+  	<ul id "forecastMapDisplay"></ul>
+  </div>
+</body>
+</html>
